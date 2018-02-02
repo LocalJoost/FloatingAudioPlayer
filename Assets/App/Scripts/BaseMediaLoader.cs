@@ -19,7 +19,6 @@ public abstract class BaseMediaLoader : MonoBehaviour
 
     protected abstract IEnumerator StartLoadMedia();
 
-
     protected IEnumerator ExecuteRequest(string url, DownloadHandler handler)
     {
         var request = UnityWebRequest.Get(url);
