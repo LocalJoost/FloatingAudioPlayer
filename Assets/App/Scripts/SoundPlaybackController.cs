@@ -15,6 +15,8 @@ public class SoundPlaybackController : BaseMediaLoader
 
     private IconToggler _iconToggler;
 
+    public AudioType TypeAudio = AudioType.OGGVORBIS;
+
     // Use this for initialization
     void Start()
     {
@@ -27,7 +29,7 @@ public class SoundPlaybackController : BaseMediaLoader
 
     private IEnumerator LoadMediaFromUrl(string url)
     {
-        var handler = new DownloadHandlerAudioClip(url, AudioType.OGGVORBIS);
+        var handler = new DownloadHandlerAudioClip(url, TypeAudio);
         yield return ExecuteRequest(url, handler);
         if (handler.audioClip.length > 0)
         {
